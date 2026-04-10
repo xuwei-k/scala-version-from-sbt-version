@@ -8,7 +8,7 @@ val scala2 = ScalaVersionFromSbtVersion(sbt1.revision)
 val `scala-version-from-sbt-version` = projectMatrix
   .in(file("core"))
   .defaultAxes(VirtualAxis.jvm)
-  .jvmPlatform(scalaVersions = Seq(scala2, "3.8.2"))
+  .jvmPlatform(scalaVersions = Seq(scala2, "3.8.3"))
   .settings(
     publishTo := (if (isSnapshot.value) None else localStaging.value),
     Test / fork := true,
