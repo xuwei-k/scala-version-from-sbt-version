@@ -10,6 +10,7 @@ val `scala-version-from-sbt-version` = projectMatrix
   .defaultAxes(VirtualAxis.jvm)
   .jvmPlatform(scalaVersions = Seq(scala2, "3.8.2"))
   .settings(
+    publishTo := (if (isSnapshot.value) None else localStaging.value),
     Test / fork := true,
     evictionErrorLevel := Level.Warn,
     libraryDependencies += "org.scalatest" %% "scalatest-funspec" % "3.2.20" % Test,
