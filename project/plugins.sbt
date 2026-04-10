@@ -9,3 +9,11 @@ Compile / unmanagedSourceDirectories ++= {
 
   Seq(dir / "scala", dir / "scala-3")
 }
+
+Compile / sourceGenerators += Def.task {
+  val objName = "MetaBuildInfo"
+  val f = (Compile / sourceManaged).value / s"${objName}.scala"
+  val src = s"""object ${objName} { def sbt2version: String = "${sbtVersion.value}" }"""
+  IO.write(f, src)
+  Seq(f)
+}

@@ -4,11 +4,12 @@ import scala_version_from_sbt_version.ScalaVersionFromSbtVersion
 val sbt1 = "org.scala-sbt" % "sbt" % "1.12.9"
 
 val scala2 = ScalaVersionFromSbtVersion(sbt1.revision)
+val scala3 = ScalaVersionFromSbtVersion(MetaBuildInfo.sbt2version)
 
 val `scala-version-from-sbt-version` = projectMatrix
   .in(file("core"))
   .defaultAxes(VirtualAxis.jvm)
-  .jvmPlatform(scalaVersions = Seq(scala2, "3.8.2"))
+  .jvmPlatform(scalaVersions = Seq(scala2, scala3))
   .settings(
     publishTo := (if (isSnapshot.value) None else localStaging.value),
     Test / fork := true,
