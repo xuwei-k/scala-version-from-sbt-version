@@ -4,7 +4,7 @@ import org.scalatest.funspec.AnyFunSpec
 
 class ScalaVersionFromSbtVersionTest extends AnyFunSpec {
   it("sbt 1") {
-    assert(ScalaVersionFromSbtVersion("1.12.9") == "2.12.21")
+    assert(ScalaVersionFromSbtVersion("1.12.9") == "2.13.18")
     assert(ScalaVersionFromSbtVersion("1.10.0") == "2.12.19")
     assert(ScalaVersionFromSbtVersion("1.9.0") == "2.12.18")
     assert(ScalaVersionFromSbtVersion("1.8.0") == "2.12.17")
