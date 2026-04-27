@@ -1,7 +1,7 @@
 import sbtrelease.ReleasePlugin.autoImport.ReleaseTransformations._
 import scala_version_from_sbt_version.ScalaVersionFromSbtVersion
 
-val sbt1 = "org.scala-sbt" % "sbt" % "1.12.9"
+val sbt1 = "org.scala-sbt" % "sbt" % "1.12.10"
 
 val scala2 = ScalaVersionFromSbtVersion(sbt1.revision)
 val scala3 = ScalaVersionFromSbtVersion(MetaBuildInfo.sbt2version)
