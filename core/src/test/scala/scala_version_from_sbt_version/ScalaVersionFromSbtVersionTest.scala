@@ -11,6 +11,7 @@ class ScalaVersionFromSbtVersionTest extends AnyFunSpec {
   }
 
   it("sbt 2") {
+    assert(ScalaVersionFromSbtVersion("2.0.0-RC15") == "3.8.4")
     assert(ScalaVersionFromSbtVersion("2.0.0-RC13") == "3.8.3")
     assert(ScalaVersionFromSbtVersion("2.0.0-RC11") == "3.8.2")
     assert(ScalaVersionFromSbtVersion("2.0.0-RC9") == "3.8.1")
