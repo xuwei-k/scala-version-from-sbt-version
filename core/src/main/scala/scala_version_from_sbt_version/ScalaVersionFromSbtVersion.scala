@@ -3,6 +3,13 @@ package scala_version_from_sbt_version
 import lmcoursier.internal.shaded.coursier
 
 object ScalaVersionFromSbtVersion extends ScalaVersionFromSbtVersionCompat {
+
+  lazy val sbtVersionFromProjectBuildProperties: String = {
+    val p = new java.util.Properties
+    p.load(new java.io.FileInputStream("project/build.properties"))
+    p.getProperty("sbt.version").trim
+  }
+
   def apply(sbtVersion: String): String = {
     val dependency = coursier.Dependency(
       coursier.Module(
