@@ -59,7 +59,7 @@ val `scala-version-from-sbt-version` = projectMatrix
     ),
     description := "get scala version from sbt version",
     organization := "com.github.xuwei-k",
-    homepage := Some(url("https://github.com/xuwei-k/scala-version-from-sbt-version")),
+    homepage := Some(uri("https://github.com/xuwei-k/scala-version-from-sbt-version")),
     licenses := List(
       License.MIT
     ),
