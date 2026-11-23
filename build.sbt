@@ -26,7 +26,7 @@ val `scala-version-from-sbt-version` = projectMatrix
         case "3" =>
           Seq(
             "org.scala-sbt" %% "librarymanagement-coursier" % sbt2 % Provided,
-            "org.scala-sbt" % "sbt" % sbt2 % Test
+            "org.scala-sbt" % "sbt" % sbtVersion.value % Test
           )
       }
     },
