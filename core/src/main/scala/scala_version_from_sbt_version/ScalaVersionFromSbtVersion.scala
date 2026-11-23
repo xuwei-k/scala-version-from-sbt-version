@@ -1,8 +1,9 @@
 package scala_version_from_sbt_version
 
 import lmcoursier.internal.shaded.coursier
+import scala_version_from_sbt_version.ScalaVersionFromSbtVersionCompat._
 
-object ScalaVersionFromSbtVersion extends ScalaVersionFromSbtVersionCompat {
+object ScalaVersionFromSbtVersion {
 
   lazy val sbtVersionFromProjectBuildProperties: String = {
     val p = new java.util.Properties

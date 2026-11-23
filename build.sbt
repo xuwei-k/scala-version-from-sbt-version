@@ -2,6 +2,7 @@ import sbtrelease.ReleasePlugin.autoImport.ReleaseTransformations._
 import scala_version_from_sbt_version.ScalaVersionFromSbtVersion
 
 val sbt1 = "org.scala-sbt" % "sbt" % "1.13.1"
+val sbt2 = "2.0.12" // scala-steward:off
 
 val scala2 = ScalaVersionFromSbtVersion(sbt1.revision)
 val scala3 = ScalaVersionFromSbtVersion(MetaBuildInfo.sbt2version)
@@ -24,8 +25,8 @@ val `scala-version-from-sbt-version` = projectMatrix
           )
         case "3" =>
           Seq(
-            "org.scala-sbt" %% "librarymanagement-coursier" % sbtVersion.value % Provided,
-            "org.scala-sbt" % "sbt" % sbtVersion.value % Test
+            "org.scala-sbt" %% "librarymanagement-coursier" % sbt2 % Provided,
+            "org.scala-sbt" % "sbt" % sbt2 % Test
           )
       }
     },
